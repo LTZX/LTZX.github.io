@@ -13,7 +13,6 @@ var historyWidth = 150;
 var svgWidth, svgHeight;
 
 var hisBut = 1, controlBut = 1;
-var trans = d3.transition().duration(300)
 
 $("#controlBut").click(function() {
     event.preventDefault();
