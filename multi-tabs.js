@@ -10,14 +10,14 @@ $('#content-his').append(
     '</ul>'+
     '<div class="tab-content" id="multi-tabs-content">'+
         '<div class="tab-pane multi-pane active" id="tab1">'+
-            '<p> Tab 1 </p>'+
+            // '<p> Tab 1 </p>'+
         '</div>'+
     '</div>'
 )
 
 $('#history').append('<h3 style="text-align:center; opacity:0.5;""> No History</h3>')
 width = $('#'+currentID).width() ;
-height = $('#'+currentID).height() * 0.8 ;
+height = $('#'+currentID).height() ;
 console.log(width + " " + height)
 svgWidth = {1: width, 0: width+controlWidth}
 svgHeight = {1: height, 0: height+historyWidth}
@@ -35,7 +35,7 @@ $('#new-tab').click(function (e) {
             '<a class="nav-link multi-link active show" data-toggle="tab" id="atab' + count +
             '" href="#' + tabId + '">'+
                 '<button value="' + count + '" class="close" >×</button>Tab ' + count + '</a></li>');
-    $('#multi-tabs-content').append('<div class="tab-pane multi-pane active show" id="' + tabId + '"> <p>Tab ' + count + '</p> </div>');
+    $('#multi-tabs-content').append('<div class="tab-pane multi-pane active show" id="' + tabId + '">  </div>');
     drawOverview(tabId);
     currentID = tabId;
 })
