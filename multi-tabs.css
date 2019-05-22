@@ -1,0 +1,60 @@
+a, a:hover, a:focus {
+    color: black;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+
+
+.nav-tabs > li .close {
+  margin-left: 20px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+
+
+#multi-tabs li{
+    height: 30px !important;
+    text-align: center;
+}
+
+#multi-tabs a {
+    padding: 4px 20px;
+    font-size: 13px;
+}
+
+.operationDiv {
+  padding: 5px 10px 5px 5px;
+}
+
+#multi-tabs {
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 30px;
+}
+
+#multi-tabs-content {
+    margin: 10px;
+    width: auto;
+    height: 85%;
+}
+
+.multi-pane {
+    width: 100%;
+    height: 100%;
+}
+
+.multi-pane p {
+    margin-left: 20px;
+}
+
+#new-tab-li {
+    width: 30px;
+}
+
+#new-tab {
+    height: 29px;
+    font-size: 15px!important;
+    margin-bottom: 1px;
+}
