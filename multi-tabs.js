@@ -17,7 +17,7 @@ $('#content-his').append(
 
 $('#history').append('<h3 style="text-align:center; opacity:0.5;""> No History</h3>')
 width = $('#'+currentID).width() ;
-height = $('#'+currentID).height() * 0.9 ;
+height = $('#'+currentID).height() * 0.8 ;
 console.log(width + " " + height)
 svgWidth = {1: width, 0: width+controlWidth}
 svgHeight = {1: height, 0: height+historyWidth}
