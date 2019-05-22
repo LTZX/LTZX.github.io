@@ -16,7 +16,7 @@ var hisBut = 1, controlBut = 1;
 
 $("#controlBut").click(function() {
     event.preventDefault();
-    console.log(currentID)
+    console.log(width + " " + height)
     controlBut = 1 - controlBut;
     width = svgWidth[controlBut]
     if(controlBut == 1) {
@@ -32,6 +32,8 @@ $("#controlBut").click(function() {
     }
 })
 $("#hisBut").click(function() {
+    console.log(width + " " + height)
+
     hisBut = 1 - hisBut;
     height = svgHeight[hisBut]
 
