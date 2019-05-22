@@ -37,7 +37,7 @@ a, a:hover, a:focus {
 #multi-tabs-content {
     margin: 10px;
     width: auto;
-    height: 85%;
+    height: auto;
 }
 
 .multi-pane {
