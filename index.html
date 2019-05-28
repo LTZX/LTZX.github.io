@@ -1,25 +1,29 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Main</title>
-  <link rel="stylesheet" href="multi-tabs.css">
-  <link rel="stylesheet" href="force-directed.css">
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <link rel="stylesheet" href="src/css/multi-tabs.css">
+    <link rel="stylesheet" href="src/css/force-directed.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
 </head>
 
 <body>
-  <div id="elm"></div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="main.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-  <script>
-  var app = Elm.Main.init({
+    <div id="elm"></div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="src/js/main.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script>
+    var app = Elm.Main.init({
     node: document.getElementById('elm')
-  });
-  </script>
-  <script src="force-directed.js"></script>
-  <script src="multi-tabs.js"></script>
-  <link rel="stylesheet" href="color.css">
+    });
+    </script>
+    <link rel="stylesheet" href="src/css/color.css">
+    <script src="src/js/init.js"></script>
+    <script src="src/js/force-directed.js"></script>
+    <script src="src/js/multi-tabs.js"></script>
 </body>
 </html>

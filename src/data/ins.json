@@ -1,0 +1,58 @@
+[
+    {"name": "Facebook", "count": 1, "level": 0},
+    {"name": "Region", "count": 14, "level": 1,
+        "data":
+        [
+            "region1",
+    		"region2",
+    		"region3",
+    		"region4"
+        ]
+    },
+    {"name": "School", "count": 18, "level": 2,
+        "data":
+        [
+            "school1",
+            "school6",
+            "school39",
+            "school41",
+            "school42",
+            "school43",
+            "school49",
+            "school52",
+            "school23",
+            "school4",
+            "school21",
+            "school10",
+            "school9",
+            "school14",
+            "school15",
+            "school16",
+            "school11",
+            "school19"
+        ]
+    },
+    {"name": "Major", "count": 17, "level": 3,
+        "data":
+        [
+            "major52",
+            "major52",
+            "major52",
+            "major52",
+            "major34",
+            "major81",
+            "major34",
+            "major31",
+            "major34",
+            "major34",
+            "major31",
+            "major81",
+            "major34",
+            "major42",
+            "major14",
+            "major62",
+            "major48",
+            "major21"
+        ]
+    }
+]

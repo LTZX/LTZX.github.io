@@ -57,7 +57,7 @@ init =
 
         controlPanel = { button = "X", status = Open, margin = "0px" }
 
-        historyPanel = { button = "down.png", status = Open, margin = "0px" }
+        historyPanel = { button = "src/rcs/down.png", status = Open, margin = "0px" }
 
         colors = { control = "#a6a6a6", history = "#e6e6e6", historyButton = "#d9d9d9" }
 
@@ -111,14 +111,14 @@ update msg model =
             case model.historyPanel.status of
                 Open ->
                     let
-                        historyPanel = { button = "up.png", status = Close, margin = "-178px" }
+                        historyPanel = { button = "src/rcs/up.png", status = Close, margin = "-178px" }
                     in
                     ( { model | historyPanel = historyPanel }
                     , Cmd.none
                     )
                 Close ->
                     let
-                        historyPanel = { button = "down.png", status = Open, margin = "0px" }
+                        historyPanel = { button = "src/rcs/down.png", status = Open, margin = "0px" }
                     in
                     ( { model | historyPanel = historyPanel }
                     , Cmd.none

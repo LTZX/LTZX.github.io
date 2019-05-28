@@ -1,0 +1,62 @@
+.link {
+    stroke: #ccc;
+}
+
+div.tooltip {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    padding: 2px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    background: lightsteelblue;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+    margin-left: 20px;
+}
+
+svg {
+    /* background-color: lightgrey; */
+}
+
+.ins {
+    width: 250px;
+    /* height: 100px; */
+    min-height: 100px;
+    max-height: 90%;
+    overflow-y: auto;
+
+    -moz-box-shadow: 3px 3px 4px #ccc;
+    -webkit-box-shadow: 3px 3px 4px #ccc;
+    box-shadow: 3px 3px 4px #ccc; /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')"; /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength = 4, Direction = 135, Color = '#cccccc');
+
+}
+.ins li {
+    cursor: pointer;
+}
+.insheader {
+    width: 100%;
+    height: 40px;
+    background: steelblue;
+    cursor: move;
+}
+.insback {
+    margin-top: 5px;
+    margin-left: 10px;
+    visibility: hidden;
+}
+.insclose {
+    margin-top: 5px;
+    float: right;
+    margin-right: 10px;
+}
+.insbut {
+    visibility: hidden;
+    background: steelblue!important;
+    border-color: steelblue!important;
+    position: absolute;
+}

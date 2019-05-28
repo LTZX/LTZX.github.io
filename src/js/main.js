@@ -5148,7 +5148,7 @@ var rundis$elm_bootstrap$Bootstrap$Tab$State = function (a) {
 var rundis$elm_bootstrap$Bootstrap$Tab$initialState = rundis$elm_bootstrap$Bootstrap$Tab$State(
 	{activeTab: elm$core$Maybe$Nothing, visibility: rundis$elm_bootstrap$Bootstrap$Tab$Showing});
 var author$project$Main$init = function () {
-	var historyPanel = {button: 'down.png', margin: '0px', status: author$project$Main$Open};
+	var historyPanel = {button: 'src/rcs/down.png', margin: '0px', status: author$project$Main$Open};
 	var controlPanel = {button: 'X', margin: '0px', status: author$project$Main$Open};
 	var colors = {control: '#a6a6a6', history: '#e6e6e6', historyButton: '#d9d9d9'};
 	var _n0 = rundis$elm_bootstrap$Bootstrap$Navbar$initialState(author$project$Main$NavMsg);
@@ -5919,14 +5919,14 @@ var author$project$Main$update = F2(
 			default:
 				var _n2 = model.historyPanel.status;
 				if (_n2.$ === 'Open') {
-					var historyPanel = {button: 'up.png', margin: '-178px', status: author$project$Main$Close};
+					var historyPanel = {button: 'src/rcs/up.png', margin: '-178px', status: author$project$Main$Close};
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
 							{historyPanel: historyPanel}),
 						elm$core$Platform$Cmd$none);
 				} else {
-					var historyPanel = {button: 'down.png', margin: '0px', status: author$project$Main$Open};
+					var historyPanel = {button: 'src/rcs/down.png', margin: '0px', status: author$project$Main$Open};
 					return _Utils_Tuple2(
 						_Utils_update(
 							model,
