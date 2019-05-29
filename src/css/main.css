@@ -25,8 +25,8 @@ svg {
     width: 250px;
     /* height: 100px; */
     min-height: 100px;
-    max-height: 90%;
-    overflow-y: auto;
+    /* max-height: 90%; */
+    /* overflow-y: auto; */
 
     -moz-box-shadow: 3px 3px 4px #ccc;
     -webkit-box-shadow: 3px 3px 4px #ccc;
@@ -59,4 +59,8 @@ svg {
     background: steelblue!important;
     border-color: steelblue!important;
     position: absolute;
+}
+.list-group {
+    overflow-y: scroll;
+    max-height: 450px;
 }

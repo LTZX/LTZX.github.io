@@ -7286,7 +7286,6 @@ var author$project$Main$history = function (model) {
 				A2(elm$html$Html$Attributes$style, 'height', '200px'),
 				A2(elm$html$Html$Attributes$style, 'width', '100%'),
 				A2(elm$html$Html$Attributes$style, 'background', model.colors.historyButton),
-				A2(elm$html$Html$Attributes$style, 'margin-top', 'auto'),
 				A2(elm$html$Html$Attributes$style, 'margin-bottom', model.historyPanel.margin),
 				A2(elm$html$Html$Attributes$style, 'transition', 'all 0.3s'),
 				elm$html$Html$Attributes$class('trans')
@@ -7351,8 +7350,7 @@ var author$project$Main$mainContent = function (model) {
 				A2(elm$html$Html$Attributes$style, 'height', 'calc(100vh - 45px)'),
 				A2(elm$html$Html$Attributes$style, 'display', 'flex'),
 				A2(elm$html$Html$Attributes$style, 'flex-direction', 'column'),
-				A2(elm$html$Html$Attributes$style, 'align-items', 'stretch'),
-				A2(elm$html$Html$Attributes$style, 'overflow', 'hidden')
+				A2(elm$html$Html$Attributes$style, 'align-items', 'stretch')
 			]),
 		_List_fromArray(
 			[

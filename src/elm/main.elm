@@ -296,8 +296,7 @@ mainContent model =
         style "height" "calc(100vh - 45px)",
         style "display" "flex",
         style "flex-direction" "column",
-        style "align-items" "stretch",
-        style "overflow" "hidden"
+        style "align-items" "stretch"
     ] [
         multiTab model,
         history model
@@ -310,7 +309,7 @@ history model =
             style "height" "200px",
             style "width" "100%",
             style "background" model.colors.historyButton,
-            style "margin-top" "auto",
+            -- style "margin-top" "auto",
             style "margin-bottom" model.historyPanel.margin,
             style "transition" "all 0.3s",
             class "trans"
