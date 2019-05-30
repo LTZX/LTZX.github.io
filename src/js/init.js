@@ -12,6 +12,8 @@ var svgWidth, svgHeight;
 
 var hisBut = 1, controlBut = 1;
 var instData = [];
+var selData = [];
+
 
 $.getJSON( "src/data/ins.json", function( data ) {
     jQuery.extend(true, instData, data);

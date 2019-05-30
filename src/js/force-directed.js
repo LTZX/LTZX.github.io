@@ -126,5 +126,6 @@ function drawOverview() {
 function drawOnetab() {
     drawOverview();
     drawInstruction();
+    drawSelected();
 }
 drawOnetab()

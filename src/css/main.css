@@ -64,3 +64,38 @@ svg {
     overflow-y: scroll;
     max-height: 450px;
 }
+.sel {
+    width: 250px;
+    /* height: 100px; */
+    min-height: 100px;
+    /* max-height: 90%; */
+    /* overflow-y: auto; */
+
+    -moz-box-shadow: 3px 3px 4px #ccc;
+    -webkit-box-shadow: 3px 3px 4px #ccc;
+    box-shadow: 3px 3px 4px #ccc; /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')"; /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength = 4, Direction = 135, Color = '#cccccc');
+
+}
+.sel li {
+    cursor: pointer;
+}
+.selheader {
+    width: 100%;
+    height: 40px;
+    background: steelblue;
+    cursor: move;
+}
+
+.selclose {
+    margin-top: 5px;
+    float: right;
+    margin-right: 10px;
+}
+.selbut {
+    visibility: hidden;
+    background: steelblue!important;
+    border-color: steelblue!important;
+    position: absolute;
+}
