@@ -20,10 +20,12 @@ $('#new-tab').click(function (e) {
 
 $(document).on('click', '.multi-link', function(){
     currentID = $(this)[0].id.substring(1);
-    $('#svg'+currentID).width(width)
-    $('#svg'+currentID).height(height)
-    forceDict[currentID].force("center", d3.forceCenter(width / 2, height / 2))
-    forceDict[currentID].alpha(1).restart();
+    if(!(currentID in parent)) {
+        $('#svg'+currentID).width(width)
+        $('#svg'+currentID).height(height)
+        forceDict[currentID].force("center", d3.forceCenter(width / 2, height / 2))
+        forceDict[currentID].alpha(1).restart();
+    }
 })
 
 $(document).on('click', '.close', function(){

@@ -22,4 +22,5 @@ $(document).on('click', '.back', function(){
     $('.multi-pane').removeClass('active show');
     $('#'+parent[currentID]).addClass('active show');
     $('#a'+parent[currentID]).addClass('active show');
+    currentID = parent[currentID]
 })
