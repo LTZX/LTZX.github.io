@@ -1,4 +1,4 @@
-$('#new-tab').click(function (e) {
+function newTab() {
     composeCount = composeCount + 1; //increment compose count
     var count = composeCount;
     currentID = "tab" + count; //this is id on tab content div where the
@@ -11,6 +11,10 @@ $('#new-tab').click(function (e) {
             '" href="#' + currentID + '">'+
                 '<button value="' + count + '" class="close" >×</button>Tab ' + count + '</a></li>');
     $('#multi-tabs-content').append('<div class="tab-pane multi-pane active show" id="' + currentID + '">  </div>');
+}
+
+$('#new-tab').click(function (e) {
+    newTab();
     drawOnetab();
 })
 

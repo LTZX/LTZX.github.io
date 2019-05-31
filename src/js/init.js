@@ -16,6 +16,9 @@ var selData = [];
 
 var infoDict = {};
 
+var parent = {};
+var detailData = {};
+
 d3.json("src/data/info.json", function(data){
     infoDict = data;
 })
