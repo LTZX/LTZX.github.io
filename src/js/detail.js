@@ -10,7 +10,14 @@ function cleanForDetail() {
     Object.assign(detailData[currentID], selData[oldID]["items"])
 
     $('#' + currentID)
-    .append('<button type="button" class="btn btn-primary back" id="back' + currentID + '">Back To Overview</button>')
+    .append('<button type="button" class="btn btn-primary back" id="back' + currentID + '">Back To Overview</button>');
+    $('#' + currentID)
+    .append('<div class="alert alert-info alert-dismissible" style="margin:20px;">' +
+        '<button class="close" type="button" data-dismiss="alert">×</button>' +
+        '<strong>Zoom In!</strong> To see more details of the network.' +
+    '</div>')
+
+    drawDetail();
 }
 
 function submit(){

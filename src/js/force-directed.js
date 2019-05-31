@@ -1,32 +1,43 @@
 $("#controlBut").click(function() {
     event.preventDefault();
-
+    var dict;
+    if(currentID in parent) {
+        dict = forceDictDetail;
+    } else {
+        dict = forceDict;
+    }
     controlBut = 1 - controlBut;
     width = svgWidth[controlBut]
     if(controlBut == 1) {
         $('#svg'+currentID).width(width)
-        forceDict[currentID].force("center", d3.forceCenter(width / 2, height / 2))
-        forceDict[currentID].alpha(1).restart();
+        dict[currentID].force("center", d3.forceCenter(width / 2, height / 2))
+        dict[currentID].alpha(1).restart();
     } else {
         setTimeout(function(){
             $('#svg'+currentID).width(width)
-            forceDict[currentID].force("center", d3.forceCenter(width / 2, height / 2))
-            forceDict[currentID].alpha(1).restart();
+            dict[currentID].force("center", d3.forceCenter(width / 2, height / 2))
+            dict[currentID].alpha(1).restart();
         },300);
     }
 })
 $("#hisBut").click(function() {
+    var dict;
+    if(currentID in parent) {
+        dict = forceDictDetail;
+    } else {
+        dict = forceDict;
+    }
     hisBut = 1 - hisBut;
     height = svgHeight[hisBut]
     if(hisBut == 1) {
         $('#svg'+currentID).height(height)
-        forceDict[currentID].force("center", d3.forceCenter(width / 2, height / 2))
-        forceDict[currentID].alpha(1).restart();
+        dict[currentID].force("center", d3.forceCenter(width / 2, height / 2))
+        dict[currentID].alpha(1).restart();
     } else {
         setTimeout(function(){
             $('#svg'+currentID).height(height)
-            forceDict[currentID].force("center", d3.forceCenter(width / 2, height / 2))
-            forceDict[currentID].alpha(1).restart();
+            dict[currentID].force("center", d3.forceCenter(width / 2, height / 2))
+            dict[currentID].alpha(1).restart();
         },300);
     }
 })
@@ -35,7 +46,7 @@ $("#hisBut").click(function() {
 function drawOverview() {
 
     var force = d3.forceSimulation()
-       .force("charge", d3.forceManyBody())
+       .force("charge", d3.forceManyBody().strength(-50))
        .force("link", d3.forceLink().id(function(d) { return d.index }))
        .force("center", d3.forceCenter(width / 2, height / 2))
 

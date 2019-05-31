@@ -4,6 +4,7 @@ var currentID = 'tab1';
 var width, height;
 
 var forceDict = {};
+var forceDictDetail = {};
 var instDict = {};
 
 var controlWidth = 320;
