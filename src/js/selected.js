@@ -55,7 +55,8 @@ function updateNodes() {
 function addItem(key, html) {
     if(selData[currentID]['count'] == 0) {
         $('#selnothing').remove();
-        $('#sel' + currentID).append('<button id="submit'+ currentID + '" type="button" class="submit btn btn-sm btn-light btn-lg btn-block">Submit</button>')
+        $('#sel' + currentID).append('<button id="submit'+ currentID +
+        '" type="button" class="submit btn btn-sm btn-light btn-lg btn-block">Submit</button>')
     }
     selData[currentID]['count']++;
     if(!(key in selData[currentID]["items"])) {

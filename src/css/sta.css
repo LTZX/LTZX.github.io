@@ -1,0 +1,14 @@
+.staheader {
+
+}
+.stabody {
+    height: calc(100% - 290px);
+}
+
+.selectData {
+    margin: 1%;
+}
+
+.selectGraph {
+    margin: 1%;
+}
