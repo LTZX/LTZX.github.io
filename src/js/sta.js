@@ -35,3 +35,29 @@ for(var i in staId) {
     }
     $('#selectGraph-'+id).append(graph)
 }
+
+$('.selectpicker').on('changed.bs.select', function (e, clickedIndex, isSelected, previousValue) {
+    console.log($(this)[0].id)
+    var id = $(this)[0].id;
+    id = id.substr(id.indexOf('-')+1);
+    console.log(id)
+    if(id == 'tabItem1') {
+        selectChanged($(this)[0].id, id, clickedIndex);
+    } else {
+
+    }
+
+});
+
+function selectChanged(selectID, tabID, clickedIndex) {
+    switch (selectID) {
+        case 'selectData-'+tabID:
+            console.log('load:' + staData['tabID']['data'][clickedIndex])
+
+        case 'selectGraph-'+tabID:
+            console.log('draw: '+ staData['tabID']['graph'][clickedIndex])
+
+        default:
+            break;
+    }
+}
