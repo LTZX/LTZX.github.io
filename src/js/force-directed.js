@@ -107,7 +107,7 @@ function drawOverview() {
         }).on('mouseout', function(d){
             if(d.level != 0){
                 if(!(d.name in selData[currentID]['items'])) {
-                    removeItem(d.name);
+                    removeItem(d.name, false);
                 }
                 else {
                     d3.selectAll("." + currentID + '-' + d.name)

@@ -53,10 +53,9 @@ function updateNodes() {
 }
 
 function addItem(key, html) {
-
     if(selData[currentID]['count'] == 0) {
         $('#selnothing').remove();
-        $('#sel' + currentID).append('<button id="submit'+currentID +'" type="button" class="btn btn-sm btn-light btn-lg btn-block">Submit</button>')
+        $('#sel' + currentID).append('<button id="submit'+ currentID + '" type="button" class="submit btn btn-sm btn-light btn-lg btn-block">Submit</button>')
     }
     selData[currentID]['count']++;
     if(!(key in selData[currentID]["items"])) {
@@ -88,11 +87,12 @@ function addItem(key, html) {
     }
 }
 
-function removeItem(key) {
+function removeItem(key, decrease) {
     delete selData[currentID]["items"][key];
     $("#sb-" + key).remove();
-    selData[currentID]['count']--;
-    if(selData[currentID]['count'] == 0) {
+    if(decrease)
+        selData[currentID]['count']--;
+    if(selData[currentID]['count'] == 0 && decrease) {
         setbackNodes();
         $('#selbody' + currentID).append("<h6 id='selnothing' style='opacity: 0.5; margin-top:10px;'> Nothing Selected </h6>")
         $('#submit' + currentID).remove();
@@ -139,5 +139,9 @@ $(document).on('click', '.selclose', function(){
 $(document).on('click', '.sbclose', function(){
     var key = $(this).attr('id')
     key = key.substr(key.indexOf('-')+1)
-    removeItem(key);
+    removeItem(key, true);
+});
+
+$(document).on('click', '.submit', function(){
+    submit();
 });
