@@ -30,7 +30,7 @@ function drawInstruction() {
     $.getJSON( "src/data/ins.json", function( data ) {
         items = []
         $.each( data, function( i , row ) {
-            if(row["count"] == 1) {
+            if(row["level"] == 0) {
                 items.push( "<li value="
                 + i
                 + " class='list-group-item disabled' style='background-color:"
@@ -127,13 +127,15 @@ $(document).on('click', '.list-group-item', function(){
     } else {
         var input = $(this).attr('id');
         input = input.substr(input.indexOf('#') + 1)
-        d3.selectAll(".node" + currentID).style("opacity", 0.2);
-        d3.selectAll("." + currentID + input).style("opacity", 1);
+        updateNodes();
+        d3.selectAll("." + currentID + '-' + input)
+        .attr("r", 15)
     }
 });
 
-$(document).on('click', '.addbut', function(){
+$(document).on('click', '.addbut', function(e){
+    e.stopPropagation();
     var input = $(this).attr('id');
     input = input.substr(input.indexOf('+') + 1)
-    addItem(input);
+    addItem(input, true);
 });

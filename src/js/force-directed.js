@@ -70,19 +70,55 @@ function drawOverview() {
             .on("end", dragended))
 
         node.append('circle')
-            .attr('class', function (d) { return 'node node' + currentID + " " + currentID + d.name; })
+            .attr('class', function (d) { return 'node' + currentID + " " + currentID + "-" + d.name; })
             .attr('r', 10)
             .attr('fill', function (d) { return color(d.level); });
 
-        // node.append("text")
-        //     .attr("dx", -18)
-        //     .attr("dy", 8)
-        //     .style("font-family", "overwatch")
-        //     .style("font-size", "18px")
-        //
-        //     .text(function (d) {
-        //         return d.name
-        //     });
+        // =========== events =============
+        node.on('mouseover', function(d){
+            if(d.level != 0){
+                if(selData[currentID]['close'] == true) {
+                    $("#sel" + currentID).position({
+                        my: "left top",
+                        at: "left top",
+                        of: "#selbut" + currentID,
+                        within: "#" + currentID
+                    });
+                    $("#selbut"+currentID).css("visibility", "hidden");
+                    $("#sel"+currentID).css("visibility", "visible");
+                    selData[currentID]["close"] = false;
+                }
+                if(!(d.name in selData[currentID]['items'])) {
+                    updateNodes();
+                    $('#selbody' + currentID).prepend( '<div class="selectedBox" id="sb-' + d.name +
+                        '" style="background-color: ' + hexToRGB(color(infoDict[d.name]['level']), 0.4) + '">' +
+                            '<button type="button" class="btn btn-light btn-xs sbclose" id="sbclose-' + d.name + '"> X </button>' +
+                            '<div class="sbinfo">' +
+                                '<h6> name: ' + d.name + ' </h6>' +
+                                '<h6> count: ' + infoDict[d.name]['count'] + ' </h6>' +
+                                '<h6> level: ' + infoDict[d.name]['level'] + ' </h6>' +
+                            '</div>' +
+                        '</div>'
+                    );
+                }
+                d3.selectAll("." + currentID + '-' + d.name)
+                .attr("r", 15);
+            }
+        }).on('mouseout', function(d){
+            if(d.level != 0){
+                if(!(d.name in selData[currentID]['items'])) {
+                    removeItem(d.name);
+                }
+                else {
+                    d3.selectAll("." + currentID + '-' + d.name)
+                    .attr("r", 10);
+                }
+            }
+        }).on('click', function(d){
+            if(d.level != 0){
+                addItem(d.name, false);
+            }
+        });
 
         force.on("tick", function () {
             link.attr("x1", function (d) {
@@ -102,8 +138,6 @@ function drawOverview() {
             });
         });
     });
-
-
 
     function dragstarted(d) {
         if (!d3.event.active) force.alphaTarget(0.5).restart();
