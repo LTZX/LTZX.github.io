@@ -12,16 +12,18 @@ function drawInstruction() {
     $("#ins" + currentID).draggable({containment: "parent"});
     $("#insbut" + currentID).draggable({containment: "parent", cancel:false});
 
-    $("#ins" + currentID).position({
-        my: "left top",
-        at: "left+50 top+50",
-        of: "#" + currentID
-    });
+    // $("#ins" + currentID).position({
+    //     my: "left top",
+    //     at: "left+50 top+50",
+    //     of: "#" + currentID,
+    //     within: "#" + currentID
+    // });
 
     $("#insbut" + currentID).position({
         my: "left top",
         at: "left top",
-        of: "#ins" + currentID
+        of: "#ins" + currentID,
+        within: "#" + currentID
     });
 
 
@@ -29,9 +31,19 @@ function drawInstruction() {
         items = []
         $.each( data, function( i , row ) {
             if(row["count"] == 1) {
-                items.push( "<li value=" + i + " class='list-group-item disabled' style='background-color:" + hexToRGB(color(row["level"]), 0.4) + " '>" + row["name"] + " (" + row["count"] + ")" + "</li>" );
+                items.push( "<li value="
+                + i
+                + " class='list-group-item disabled' style='background-color:"
+                + hexToRGB(color(row["level"]), 0.4) + " '>"
+                + row["name"] + " (" + row["count"] + ")"
+                + "</li>" );
             } else {
-                items.push( "<li value=" + i + " class='list-group-item' style='background-color:" + hexToRGB(color(row["level"]), 0.4) + " '>" + row["name"] + " (" + row["count"] + ")" + "</li>" );
+                items.push( "<li value="
+                + i
+                + " class='list-group-item' style='background-color:"
+                + hexToRGB(color(row["level"]), 0.4) + " '>"
+                + row["name"] + " (" + row["count"] + ")"
+                + "</li>" );
             }
         });
         $( "<ul/>", {
@@ -48,7 +60,8 @@ $(document).on('click', '.insbut', function(){
     $("#ins" + currentID).position({
         my: "left top",
         at: "left top",
-        of: "#insbut" + currentID
+        of: "#insbut" + currentID,
+        within: "#" + currentID
     });
     $("#insbut"+currentID).css("visibility", "hidden");
     $("#ins"+currentID).css("visibility", "visible");
@@ -79,7 +92,8 @@ $(document).on('click', '.insclose', function(){
     $("#insbut" + currentID).position({
         my: "left top",
         at: "left top",
-        of: "#ins" + currentID
+        of: "#ins" + currentID,
+        within: "#" + currentID
     });
 });
 
@@ -95,7 +109,13 @@ $(document).on('click', '.list-group-item', function(){
         $("#list"+currentID).remove();
         var tmp = []
         $.each( detail, function( i, row ) {
-            tmp.push( "<li class='list-group-item' style='background-color:" + hexToRGB(color(current["level"]), 0.4) + " '>" + row + "</li>" );
+            tmp.push( "<li class='list-group-item' style='background-color:"
+            + hexToRGB(color(current["level"]), 0.4)
+            + " ' id='value#" + row + " '>"
+            + '<text > ' + row + ' (' + infoDict[row]['count'] + ')' + ' </text>'
+            + '<button type="button" class="btn btn-light btn-sm addbut" '
+            + ' id="add+' + row  + '"> + </button>'
+            + "</li>" );
         });
         $( "<ul/>", {
             "class": "list-group",
@@ -105,9 +125,15 @@ $(document).on('click', '.list-group-item', function(){
         $("#insback"+currentID).css("visibility", "visible");
         instDict[currentID]["clicked"] = true;
     } else {
-        var current = $(this).text()
+        var input = $(this).attr('id');
+        input = input.substr(input.indexOf('#') + 1)
         d3.selectAll(".node" + currentID).style("opacity", 0.2);
-        d3.selectAll("." + currentID + current).style("opacity", 1);
+        d3.selectAll("." + currentID + input).style("opacity", 1);
     }
+});
 
+$(document).on('click', '.addbut', function(){
+    var input = $(this).attr('id');
+    input = input.substr(input.indexOf('+') + 1)
+    addItem(input);
 });

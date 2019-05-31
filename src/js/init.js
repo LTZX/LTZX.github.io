@@ -14,6 +14,11 @@ var hisBut = 1, controlBut = 1;
 var instData = [];
 var selData = [];
 
+var infoDict = {};
+
+d3.json("src/data/info.json", function(data){
+    infoDict = data;
+})
 
 $.getJSON( "src/data/ins.json", function( data ) {
     jQuery.extend(true, instData, data);

@@ -30,10 +30,9 @@ type alias Panel =
     {
       button : String,
       status : PanelStatus,
-      margin: String
+      margin: String,
+      maxHeight: String
   }
-
-
 
 type alias ColorPicker =
     {
@@ -55,9 +54,9 @@ init =
     let
         ( navState, navCmd ) = Navbar.initialState NavMsg
 
-        controlPanel = { button = "X", status = Open, margin = "0px" }
+        controlPanel = { button = "X", status = Open, margin = "0px", maxHeight = "" }
 
-        historyPanel = { button = "src/rcs/down.png", status = Open, margin = "0px" }
+        historyPanel = { button = "src/rcs/down.png", status = Open, margin = "0px", maxHeight = "calc(100vh - 245px)" }
 
         colors = { control = "#a6a6a6", history = "#e6e6e6", historyButton = "#d9d9d9" }
 
@@ -91,14 +90,14 @@ update msg model =
             case model.controlPanel.status of
                 Open ->
                     let
-                        controlPanel = { button = "Control", status = Close, margin = "-320px" }
+                        controlPanel = { button = "Control", status = Close, margin = "-320px", maxHeight = "" }
                     in
                     ( { model | controlPanel = controlPanel }
                     , Cmd.none
                     )
                 Close ->
                     let
-                        controlPanel = { button = "X", status = Open, margin = "0px" }
+                        controlPanel = { button = "X", status = Open, margin = "0px", maxHeight = "" }
                     in
                     ( { model | controlPanel = controlPanel }
                     , Cmd.none
@@ -111,14 +110,14 @@ update msg model =
             case model.historyPanel.status of
                 Open ->
                     let
-                        historyPanel = { button = "src/rcs/up.png", status = Close, margin = "-178px" }
+                        historyPanel = { button = "src/rcs/up.png", status = Close, margin = "-178px", maxHeight = "calc(100vh - 67px)" }
                     in
                     ( { model | historyPanel = historyPanel }
                     , Cmd.none
                     )
                 Close ->
                     let
-                        historyPanel = { button = "src/rcs/down.png", status = Open, margin = "0px" }
+                        historyPanel = { button = "src/rcs/down.png", status = Open, margin = "0px", maxHeight = "calc(100vh - 245px)" }
                     in
                     ( { model | historyPanel = historyPanel }
                     , Cmd.none
@@ -343,6 +342,7 @@ multiTab : Model -> Html Msg
 multiTab model =
     div [
         style "height" "100%",
+        style "max-height" model.historyPanel.maxHeight,
         style "width" "100%",
         style "transition" "all 0.3s",
         style "padding" "10px",

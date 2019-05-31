@@ -25,8 +25,10 @@ svg {
     width: 250px;
     /* height: 100px; */
     min-height: 100px;
-    /* max-height: 90%; */
     /* overflow-y: auto; */
+    position: fixed;
+    top: 120px;
+    left: 100px;
 
     -moz-box-shadow: 3px 3px 4px #ccc;
     -webkit-box-shadow: 3px 3px 4px #ccc;
@@ -54,6 +56,9 @@ svg {
     float: right;
     margin-right: 10px;
 }
+.addbut {
+    float: right;
+}
 .insbut {
     visibility: hidden;
     background: steelblue!important;
@@ -62,14 +67,16 @@ svg {
 }
 .list-group {
     overflow-y: scroll;
-    max-height: 450px;
+    max-height: 400px;
 }
 .sel {
-    width: 250px;
-    /* height: 100px; */
+    width: 350px;
     min-height: 100px;
     /* max-height: 90%; */
     /* overflow-y: auto; */
+    position: fixed;
+    top: 120px;
+    right: 400px;
 
     -moz-box-shadow: 3px 3px 4px #ccc;
     -webkit-box-shadow: 3px 3px 4px #ccc;
@@ -77,6 +84,11 @@ svg {
     -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')"; /* For IE 5.5 - 7 */
     filter: progid:DXImageTransform.Microsoft.Shadow(Strength = 4, Direction = 135, Color = '#cccccc');
 
+}
+
+.selclear {
+    margin-top: 5px;
+    margin-left: 10px;
 }
 .sel li {
     cursor: pointer;
@@ -87,7 +99,13 @@ svg {
     background: steelblue;
     cursor: move;
 }
-
+.selbody {
+    text-align: center;
+    width: 100%;
+    max-height: 400px;
+    overflow: auto;
+    padding: 5px;
+}
 .selclose {
     margin-top: 5px;
     float: right;
@@ -98,4 +116,24 @@ svg {
     background: steelblue!important;
     border-color: steelblue!important;
     position: absolute;
+}
+.selectedBox {
+    display: inline-block;
+    background-color: lightgrey;
+    margin: 5px;
+    text-align: left;
+    width: 140px;
+    /* padding: 10px; */
+}
+.sbclose {
+    float: right;
+    margin-right: 3px;
+    margin-left: auto;
+    padding: .25rem .4rem!important;
+    font-size: .8rem!important;
+    line-height: 1!important;
+    border-radius: .2rem!important;
+}
+.sbinfo {
+    margin: 35px 10px 10px 10px;
 }
