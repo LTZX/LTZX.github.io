@@ -152,7 +152,7 @@ function drawDetail() {
                             .id(function(d) { return d.name; });
 
     var charge_force = d3.forceManyBody()
-        .strength(-150);
+        .strength(-120);
 
     var center_force = d3.forceCenter(width / 2, height / 2);
 

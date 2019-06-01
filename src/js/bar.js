@@ -1,14 +1,15 @@
-function drawBar(data, tabId) {
+function drawBar(tabId) {
 
-    d3.select('#svg-'+tabId).remove();
+    // d3.select('#stasvg-'+tabId).remove();
     var ele = $("#" + tabId).children().last().children().last();
+    ele.empty();
 
     // set the dimensions and margins of the graph
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
         width = ele.width() - margin.left - margin.right,
         height = ele.height() - margin.top - margin.bottom;
 
-    var svg = ele.append('<svg id="svg'+tabId+'"></svg>');
+    var svg = ele.append('<svg id="stasvg'+tabId+'"></svg>');
 
     // set the ranges
     var x = d3.scaleBand()
@@ -20,7 +21,7 @@ function drawBar(data, tabId) {
     // append the svg object to the body of the page
     // append a 'group' element to 'svg'
     // moves the 'group' element to the top left margin
-    var svg = d3.select('#svg'+tabId)
+    var svg = d3.select('#stasvg'+tabId)
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
       .append("g")
@@ -28,12 +29,12 @@ function drawBar(data, tabId) {
               "translate(" + margin.left + "," + margin.top + ")");
 
       // Scale the range of the data in the domains
-      x.domain(data.map(function(d) { return d.x; }));
-      y.domain([0, d3.max(data, function(d) { return d.y; })]);
+      x.domain(inputData.map(function(d) { return d.x; }));
+      y.domain([0, d3.max(inputData, function(d) { return d.y; })]);
 
       // append the rectangles for the bar chart
       svg.selectAll(".bar")
-          .data(data)
+          .data(inputData)
         .enter().append("rect")
           .attr("class", "bar")
           .attr("fill", "steelblue")

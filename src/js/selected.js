@@ -11,7 +11,7 @@ function drawSelected() {
         "</div>"+
         '<button type="button" class="btn btn-primary btn-lg selbut" id="selbut' + currentID + '">Selected Items</button>'
     )
-    $("#sel" + currentID).draggable({containment: "parent",  axis: 'x' });
+    $("#sel" + currentID).draggable({containment: "parent"});
     $("#selbut" + currentID).draggable({containment: "parent", axis: 'x', cancel:false});
 
     // $("#sel" + currentID).resizable();
