@@ -8029,10 +8029,7 @@ var author$project$Main$tab = function (model) {
 											A2(elm$html$Html$Attributes$style, 'height', '50%'),
 											A2(elm$html$Html$Attributes$style, 'padding', '15px')
 										]),
-									_List_fromArray(
-										[
-											elm$html$Html$text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
-										]))
+									_List_Nil)
 								]))
 					}),
 					rundis$elm_bootstrap$Bootstrap$Tab$item(
@@ -8065,10 +8062,7 @@ var author$project$Main$tab = function (model) {
 											A2(elm$html$Html$Attributes$style, 'height', '50%'),
 											A2(elm$html$Html$Attributes$style, 'padding', '15px')
 										]),
-									_List_fromArray(
-										[
-											elm$html$Html$text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
-										]))
+									_List_Nil)
 								]))
 					}),
 					rundis$elm_bootstrap$Bootstrap$Tab$item(
