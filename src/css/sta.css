@@ -2,13 +2,17 @@
 
 }
 .stabody {
-    height: calc(100% - 290px);
+    height: 85%;
+    background-color: white;
+    margin-top: 5%
 }
 
 .selectData {
-    margin: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .selectGraph {
-    margin: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
 }

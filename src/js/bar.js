@@ -2,10 +2,11 @@ function drawBar(data, tabId) {
 
     d3.select('#svg-'+tabId).remove();
     var ele = $("#" + tabId).children().last().children().last();
+
     // set the dimensions and margins of the graph
     var margin = {top: 20, right: 20, bottom: 30, left: 40},
-        width = ele.width(),
-        height = ele.height();
+        width = ele.width() - margin.left - margin.right,
+        height = ele.height() - margin.top - margin.bottom;
 
     var svg = ele.append('<svg id="svg'+tabId+'"></svg>');
 
@@ -35,8 +36,9 @@ function drawBar(data, tabId) {
           .data(data)
         .enter().append("rect")
           .attr("class", "bar")
-          .attr("x", function(d) { return x(d.x); })
-          .attr("width", x.bandwidth())
+          .attr("fill", "steelblue")
+          .attr("x", function(d) { return x(d.x) + 5; })
+          .attr("width", x.bandwidth() - 10)
           .attr("y", function(d) { return y(d.y); })
           .attr("height", function(d) { return height - y(d.y); });
 
@@ -47,6 +49,6 @@ function drawBar(data, tabId) {
 
       // add the y Axis
       svg.append("g")
-          .call(d3.axisLeft(y));
+          .call(d3.axisLeft(y).ticks(5));
 
 }
