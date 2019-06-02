@@ -9,7 +9,7 @@ function drawBar(tabId) {
         width = ele.width() - margin.left - margin.right,
         height = ele.height() - margin.top - margin.bottom;
 
-    var svg = ele.append('<svg id="stasvg'+tabId+'"></svg>');
+    ele.append('<svg id="stasvg'+tabId+'"></svg>');
 
     // set the ranges
     var x = d3.scaleBand()

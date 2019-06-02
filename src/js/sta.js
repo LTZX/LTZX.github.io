@@ -1,7 +1,7 @@
 var staId = ["tabItem1", "tabItem2"];
 var staData = {'tabItem1': {
     'data': ['Gender', 'Birth Year', 'Marriage', 'Grade', 'Score Level'],
-    'graph': ['Bar Chart', 'Donut Chart', 'Line Chart'],
+    'graph': ['Bar Chart', 'Donut Chart', 'Scatter Plot'],
 }, 'tabItem2': {
     'data': [],
     'graph': [],
@@ -51,7 +51,6 @@ function randomData() {
 }
 
 function drawGraph(tabId) {
-    console.log("draw")
     if(curSelected[tabId][0] != "" && curSelected[tabId][1] != "") {
         randomData();
         switch (curSelected[tabId][1]) {
@@ -60,6 +59,9 @@ function drawGraph(tabId) {
                 break;
             case "Donut Chart":
                 drawDonut(tabId)
+                break;
+            case "Scatter Plot":
+                drawScatterPlot(tabId)
                 break;
             default:
                 break;

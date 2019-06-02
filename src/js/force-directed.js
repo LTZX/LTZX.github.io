@@ -46,7 +46,7 @@ $("#hisBut").click(function() {
 function drawOverview() {
 
     var force = d3.forceSimulation()
-       .force("charge", d3.forceManyBody().strength(-10))
+       .force("charge", d3.forceManyBody())
        .force("link", d3.forceLink().id(function(d) { return d.index }))
        .force("center", d3.forceCenter(width / 2, height / 2))
 
